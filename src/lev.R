@@ -8,7 +8,6 @@ outfile2 <- args[3]
 
 # Load
 A <- as.matrix(read.table(infile))
-A[which(is.na(A))] <- 0
 A <- log10(A + 1)
 
 # Modularity Matrix

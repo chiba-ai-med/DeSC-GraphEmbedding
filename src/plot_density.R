@@ -7,7 +7,6 @@ outfile <- args[2]
 
 # Load
 A <- as.matrix(read.table(infile))
-A[which(is.na(A))] <- 0
 
 # Pre-processing (Diagonal Elements)
 diagA <- A

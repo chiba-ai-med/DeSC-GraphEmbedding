@@ -20,43 +20,135 @@ if(length(grep("umap", infile1)) == 0){
 }else{
 	if(length(grep("small", infile1))){
 		if(length(grep("lem|lev|evd", infile1))){
-			png(file=outfile1, width=3000, height=3000)
-			pairs(out$vectors[, seq(min(ncol(out$vectors), 20))], col=V(g)$color, pch=16)
+			# Disease
+			png(file=outfile1, width=1000, height=1000)
+			pairs(out$vectors[, seq(min(ncol(out$vectors), 20))],
+				col=V(g)$color, pch=16)
 			dev.off()
-
-			png(file=outfile2, width=3000, height=3000)
-			pairs(out$vectors[, seq(min(ncol(out$vectors), 20))], col=smoothPalette(-log10(d+1), pal="RdBu"),
+			for(i in seq(19)){
+				filename = gsub(
+					".png",
+					paste0(i, "vs", (i+1), ".png"),
+					outfile1)
+				png(file=filename, width=1000, height=1000)
+				plot(log10(out$vectors[, c(i, i+1)] + 1),
+					col=V(g)$color, pch=16, cex=2)
+				dev.off()
+			}
+			# Degree
+			png(file=outfile2, width=1000, height=1000)
+			pairs(out$vectors[, seq(min(ncol(out$vectors), 20))],
+				col=smoothPalette(-log10(d+1), pal="RdBu"),
 				pch=16)
 			dev.off()
+			for(i in seq(19)){
+				filename = gsub(
+					"_degree.png",
+					paste0(i, "vs", (i+1), "_degree.png"),
+					outfile2)
+				png(file=filename, width=1000, height=1000)
+				plot(log10(out$vectors[, c(i, i+1)] + 1),
+					col=smoothPalette(-log10(d+1), pal="RdBu"),
+					pch=16, cex=2)
+				dev.off()
+			}
 		}else{
+			# Disease
 			png(file=outfile1, width=1000, height=1000)
 			pairs(out$U, col=V(g)$color, pch=16)
 			dev.off()
-
+			for(i in seq(19)){
+				filename = gsub(
+					".png",
+					paste0(i, "vs", (i+1), ".png"),
+					outfile1)
+				png(file=filename, width=1000, height=1000)
+				plot(log10(out$U[, c(i, i+1)] + 1),
+					col=V(g)$color, pch=16, cex=2)
+				dev.off()
+			}
+			# Degree
 			png(file=outfile2, width=1000, height=1000)
 			pairs(out$U, col=smoothPalette(-log10(d+1), pal="RdBu"),
 				pch=16)
 			dev.off()
+			for(i in seq(19)){
+				filename = gsub(
+					"_degree.png",
+					paste0(i, "vs", (i+1), "_degree.png"),
+					outfile2)
+				png(file=filename, width=1000, height=1000)
+				plot(log10(out$U[, c(i, i+1)] + 1),
+					col=smoothPalette(-log10(d+1), pal="RdBu"),
+					pch=16, cex=2)
+				dev.off()
+			}
 		}
 	}else{
 		if(length(grep("lem|lev|evd", infile1))){
+			# Disease
 			png(file=outfile1, width=1000, height=1000)
-			pairs(out$vectors[, seq(min(ncol(out$vectors), 20))], col=V(g)$color, pch=16)
+			pairs(out$vectors[, seq(min(ncol(out$vectors), 20))],
+				col=V(g)$color, pch=16)
 			dev.off()
-
+			for(i in seq(min(ncol(out$vectors), 20)-1)){
+				filename = gsub(
+					".png",
+					paste0(i, "vs", (i+1), ".png"),
+					outfile1)
+				png(file=filename, width=1000, height=1000)
+				plot(log10(out$vectors[, c(i, i+1)] + 1),
+					col=V(g)$color, pch=16, cex=2)
+				dev.off()
+			}
+			# Degree
 			png(file=outfile2, width=1000, height=1000)
-			pairs(out$vectors[, seq(min(ncol(out$vectors), 20))], col=smoothPalette(-log10(d+1), pal="RdBu"),
+			pairs(out$vectors[, seq(min(ncol(out$vectors), 20))],
+				col=smoothPalette(-log10(d+1), pal="RdBu"),
 				pch=16)
 			dev.off()
+			for(i in seq(min(ncol(out$vectors), 20)-1)){
+				filename = gsub(
+					"_degree.png",
+					paste0(i, "vs", (i+1), "_degree.png"),
+					outfile2)
+				png(file=filename, width=1000, height=1000)
+				plot(log10(out$vectors[, c(i, i+1)] + 1),
+					col=smoothPalette(-log10(d+1), pal="RdBu"),
+					pch=16, cex=2)
+				dev.off()
+			}
 		}else{
+			# Disease
 			png(file=outfile1, width=1000, height=1000)
 			pairs(out$U, col=V(g)$color, pch=16)
 			dev.off()
-
+			for(i in seq(19)){
+				filename = gsub(
+					".png",
+					paste0(i, "vs", (i+1), ".png"),
+					outfile1)
+				png(file=filename, width=1000, height=1000)
+				plot(log10(out$U[, c(i, i+1)] + 1),
+					col=V(g)$color, pch=16, cex=2)
+				dev.off()
+			}
+			# Degree
 			png(file=outfile2, width=1000, height=1000)
 			pairs(out$U, col=smoothPalette(-log10(d+1), pal="RdBu"),
 				pch=16)
 			dev.off()
+			for(i in seq(19)){
+				filename = gsub(
+					"_degree.png",
+					paste0(i, "vs", (i+1), "_degree.png"),
+					outfile2)
+				png(file=filename, width=1000, height=1000)
+				plot(log10(out$U[, c(i, i+1)] + 1),
+					col=smoothPalette(-log10(d+1), pal="RdBu"),
+					pch=16, cex=2)
+				dev.off()
+			}
 		}
 	}
 }

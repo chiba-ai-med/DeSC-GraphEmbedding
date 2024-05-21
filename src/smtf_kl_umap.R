@@ -8,10 +8,9 @@ outfile2 <- args[3]
 
 # Load
 A <- as.matrix(read.table(infile))
-A[which(is.na(A))] <- 0
 
 # Semi-Binary Matrix Tri-Factorizatoin
-out <- SMTF(A, J=min(20, nrow(A)), num.iter=100, Beta=1)
+out <- SMTF(A, J=min(20, nrow(A)), num.iter=200, Beta=1)
 
 # UMAP
 out2 <- umap(out$U)$layout

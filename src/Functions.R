@@ -33,8 +33,8 @@ colvec[15] <- "#A6D854" # O (Pale Green)
 colvec[16] <- "#FFD92F" # P (Pale Yellow)
 colvec[17] <- "#E5C494" # Q (Pale Blown)
 colvec[18] <- "#B3B3B3" # R (Pale Gray)
-colvec[19] <- "#FFFFFF" # S (White)
-colvec[20] <- "#FFFFFF" # T (White)
+colvec[19] <- "#EEEEEE" # S (White)
+colvec[20] <- "#EEEEEE" # T (White)
 colvec[21] <- rgb(1,0,0) # U (Red)
 colvec[22] <- rgb(0,1,0) # W (Green)
 colvec[23] <- rgb(0,1,0) # X (Green)
@@ -44,32 +44,31 @@ colvec[25] <- rgb(0,0,1) # Z (Blue)
 # Disease Name
 diseasevec <- rep(0, length=25)
 names(diseasevec) <- LETTERS[c(1:21, 23:26)]
-diseasevec[1] <- "Certain infectious and parasitic diseases" # A
-diseasevec[2] <- "Certain infectious and parasitic diseases" # B
-diseasevec[3] <- "Neoplasms" # C
-diseasevec[4] <- "Neoplasms / Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism" # D
-diseasevec[5] <- "Endocrine, nutritional and metabolic diseases" # E
-diseasevec[6] <- "Mental and behavioural disorders" # F
-diseasevec[7] <- "Diseases of the nervous system" # G
-diseasevec[8] <- "Diseases of the eye and adnexa / Diseases of the ear and mastoid process" # H
-diseasevec[9] <- "Diseases of the circulatory system" # I
-diseasevec[10] <- "Diseases of the respiratory system" # J
-diseasevec[11] <- "Diseases of the digestive system" # K
-diseasevec[12] <- "Diseases of the skin and subcutaneous tissue" # L
-diseasevec[13] <- "Diseases of the musculoskeletal system and connective tissue" # M
-diseasevec[14] <- "Diseases of the genitourinary system" # N
-diseasevec[15] <- "Pregnancy, childbirth and the puerperium" # O
-diseasevec[16] <- "Certain conditions originating in the perinatal period" # P
-diseasevec[17] <- "Congenital malformations, deformations and chromosomal abnormalities" # Q
-diseasevec[18] <- "Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified" # R
-diseasevec[19] <- "Injury, poisoning and certain other consequences of external causes" # S
-diseasevec[20] <- "Injury, poisoning and certain other consequences of external causes" # T
-diseasevec[21] <- "Codes for special purposes" # U
-diseasevec[22] <- "External causes of morbidity and mortality" # W
-diseasevec[23] <- "External causes of morbidity and mortality" # X
-diseasevec[24] <- "External causes of morbidity and mortality
-" # Y
-diseasevec[25] <- "Factors influencing health status and contact with health services" # Z
+diseasevec[1] <- "A: Certain infectious and parasitic diseases" # A
+diseasevec[2] <- "B: Certain infectious and parasitic diseases" # B
+diseasevec[3] <- "C: Neoplasms" # C
+diseasevec[4] <- "D: Neoplasms / Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism" # D
+diseasevec[5] <- "E: Endocrine, nutritional and metabolic diseases" # E
+diseasevec[6] <- "F: Mental and behavioural disorders" # F
+diseasevec[7] <- "G: Diseases of the nervous system" # G
+diseasevec[8] <- "H: Diseases of the eye and adnexa / Diseases of the ear and mastoid process" # H
+diseasevec[9] <- "I: Diseases of the circulatory system" # I
+diseasevec[10] <- "J: Diseases of the respiratory system" # J
+diseasevec[11] <- "K: Diseases of the digestive system" # K
+diseasevec[12] <- "L: Diseases of the skin and subcutaneous tissue" # L
+diseasevec[13] <- "M: Diseases of the musculoskeletal system and connective tissue" # M
+diseasevec[14] <- "N: Diseases of the genitourinary system" # N
+diseasevec[15] <- "O: Pregnancy, childbirth and the puerperium" # O
+diseasevec[16] <- "P: Certain conditions originating in the perinatal period" # P
+diseasevec[17] <- "Q: Congenital malformations, deformations and chromosomal abnormalities" # Q
+diseasevec[18] <- "R: Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified" # R
+diseasevec[19] <- "S: Injury, poisoning and certain other consequences of external causes" # S
+diseasevec[20] <- "T: Injury, poisoning and certain other consequences of external causes" # T
+diseasevec[21] <- "U: Codes for special purposes" # U
+diseasevec[22] <- "W: External causes of morbidity and mortality" # W
+diseasevec[23] <- "X: External causes of morbidity and mortality" # X
+diseasevec[24] <- "Y: External causes of morbidity and mortality" # Y
+diseasevec[25] <- "Z: Factors influencing health status and contact with health services" # Z
 
 label2color <- function(x){
 	colvec[substr(x, 1, 1)]
