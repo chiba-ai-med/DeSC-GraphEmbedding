@@ -22,7 +22,7 @@ if(length(grep("umap", infile1)) == 0){
 		if(length(grep("lem|lev|evd", infile1))){
 			# Disease
 			png(file=outfile1, width=1000, height=1000)
-			pairs(out$vectors[, seq(min(ncol(out$vectors), 20))],
+			pairs(log10(out$vectors+1)[, seq(min(ncol(out$vectors), 20))],
 				col=V(g)$color, pch=16)
 			dev.off()
 			for(i in seq(19)){
@@ -37,7 +37,7 @@ if(length(grep("umap", infile1)) == 0){
 			}
 			# Degree
 			png(file=outfile2, width=1000, height=1000)
-			pairs(out$vectors[, seq(min(ncol(out$vectors), 20))],
+			pairs(log10(out$vectors+1)[, seq(min(ncol(out$vectors), 20))],
 				col=smoothPalette(-log10(d+1), pal="RdBu"),
 				pch=16)
 			dev.off()
@@ -55,7 +55,7 @@ if(length(grep("umap", infile1)) == 0){
 		}else{
 			# Disease
 			png(file=outfile1, width=1000, height=1000)
-			pairs(out$U, col=V(g)$color, pch=16)
+			pairs(log10(out$U + 1), col=V(g)$color, pch=16)
 			dev.off()
 			for(i in seq(19)){
 				filename = gsub(
@@ -69,7 +69,7 @@ if(length(grep("umap", infile1)) == 0){
 			}
 			# Degree
 			png(file=outfile2, width=1000, height=1000)
-			pairs(out$U, col=smoothPalette(-log10(d+1), pal="RdBu"),
+			pairs(log10(out$U + 1), col=smoothPalette(-log10(d+1), pal="RdBu"),
 				pch=16)
 			dev.off()
 			for(i in seq(19)){
@@ -88,7 +88,7 @@ if(length(grep("umap", infile1)) == 0){
 		if(length(grep("lem|lev|evd", infile1))){
 			# Disease
 			png(file=outfile1, width=1000, height=1000)
-			pairs(out$vectors[, seq(min(ncol(out$vectors), 20))],
+			pairs(log10(out$vectors+1)[, seq(min(ncol(out$vectors), 20))],
 				col=V(g)$color, pch=16)
 			dev.off()
 			for(i in seq(min(ncol(out$vectors), 20)-1)){
@@ -103,7 +103,7 @@ if(length(grep("umap", infile1)) == 0){
 			}
 			# Degree
 			png(file=outfile2, width=1000, height=1000)
-			pairs(out$vectors[, seq(min(ncol(out$vectors), 20))],
+			pairs(log10(out$vectors+1)[, seq(min(ncol(out$vectors), 20))],
 				col=smoothPalette(-log10(d+1), pal="RdBu"),
 				pch=16)
 			dev.off()
@@ -121,7 +121,7 @@ if(length(grep("umap", infile1)) == 0){
 		}else{
 			# Disease
 			png(file=outfile1, width=1000, height=1000)
-			pairs(out$U, col=V(g)$color, pch=16)
+			pairs(log10(out$U + 1), col=V(g)$color, pch=16)
 			dev.off()
 			for(i in seq(19)){
 				filename = gsub(
@@ -135,7 +135,7 @@ if(length(grep("umap", infile1)) == 0){
 			}
 			# Degree
 			png(file=outfile2, width=1000, height=1000)
-			pairs(out$U, col=smoothPalette(-log10(d+1), pal="RdBu"),
+			pairs(log10(out$U + 1), col=smoothPalette(-log10(d+1), pal="RdBu"),
 				pch=16)
 			dev.off()
 			for(i in seq(19)){
